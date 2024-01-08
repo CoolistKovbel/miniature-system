@@ -4,7 +4,7 @@ export default function DAppLayout({
   children: React.ReactNode
 }) {
   return (
-    <main>
+    <main className="w-full h-full bg-[#110] text-white">
       {/* Maybe different header */}
       
       {children}
