@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String  @unique @db.ObjectId
+  metaAddress String? @unique
+  phone       String?
+
+  Message Message[]
+
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  username      String?
+  email         String?   @unique
+  password      String?
+  emailVerified DateTime?
+  image         String?
+
+  profiles Profile[]
+}
+
+model Channel {
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  connectedToGroup String
+  owner            String
+  imageBanner      String?
+
+  message Message[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Message {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+
+  channelId String  @db.ObjectId
+  channel   Channel @relation(fields: [channelId], references: [id])
+  profileId String  @db.ObjectId
+  profile   Profile @relation(fields: [profileId], references: [userId])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
