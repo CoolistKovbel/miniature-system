@@ -11,4 +11,4 @@ I know we all need money, but i just really want to feel loved, safe, and be abl
 
 For those who may be interesting in the future...
 
-Be sure to mint an nft or contact me.. i am tired of thinking its best to be dead in the world. # miniature-system
+Be sure to mint an nft or contact me.. i am tired of thinking its best to be dead in the world. # miniature-system ¯\_(ツ)_/¯
