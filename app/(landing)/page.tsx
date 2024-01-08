@@ -1,8 +1,12 @@
-import HeaderNav from "@/components/HeaderNav";
+import Features from "@/components/landingPage/Features";
+import HeaderNav from "@/components/landingPage/HeaderNav";
+import Hero from "@/components/landingPage/Hero";
+import Hook from "@/components/landingPage/Hook";
+
 
 export default function Home() {
   return (
-    <main className="bg-[#111] text-white h-full">
+    <main className="bg-[#111] text-white min-h-screen">
 
 
       {/* header */}
@@ -10,15 +14,22 @@ export default function Home() {
 
 
       {/* Hero */}
-
+      <Hero />
 
       {/* features */}
+      <Features />
 
 
       {/* Hook */}
+      <Hook />
 
 
       {/* Footer */}
+      <footer>
+
+        <h2>Sad life</h2>
+
+      </footer>
 
 
 

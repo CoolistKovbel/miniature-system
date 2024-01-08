@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Button } from "./ui/button"
+import { Button } from "../ui/button"
 import {
   Sheet,
   SheetContent,
@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Link from "next/link"
+import { ShieldEllipsis } from "lucide-react"
 
 
 function HeaderNav() {
@@ -23,7 +24,7 @@ function HeaderNav() {
           <Image src="/MysticMurkov1.png" alt="glitchy kitty" fill />
         </div>
 
-        <h1 className="text-2xl md:text-4xl font-bold">Mystic Kitten</h1>
+        <h1 className="text-1xl md:text-2xl font-bold">Mystic Kitten</h1>
 
       </div>
 
@@ -32,10 +33,10 @@ function HeaderNav() {
         <Link href="/kitty-litter" className="rounded-md shadow-lg bg-black text-yellow p-2 font-bold">Enter KittyLitter</Link>
 
         <Sheet>
-          <SheetTrigger className="bg-[green] p-2 font-bold rounded-md shadow-lg">Open</SheetTrigger>
+          <SheetTrigger className="bg-[green] p-2 font-bold rounded-md shadow-lg"><ShieldEllipsis className="w-6 h-6" /></SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle className="text-2xl font-bold">Mystic Kitten</SheetTitle>
+              <SheetTitle className="text-1xl font-bold">Mystic Kitten</SheetTitle>
             </SheetHeader>
             <div className="flex items-end flex-col gap-2">
               <Link href="/">Home</Link>
