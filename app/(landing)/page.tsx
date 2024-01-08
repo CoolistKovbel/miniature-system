@@ -24,15 +24,6 @@ export default function Home() {
       <Hook />
 
 
-      {/* Footer */}
-      <footer>
-
-        <h2>Sad life</h2>
-
-      </footer>
-
-
-
     </main>
   )
 }

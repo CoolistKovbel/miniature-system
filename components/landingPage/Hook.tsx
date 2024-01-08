@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Hook() {
   return (
     <section className="p-5">
-      <div className="text-center">
+      <div className="text-center mb-10">
         <h2 className="text-2xl md: text-5xl font-bold mb-4 capitalize">
           Intergrated with the blockchain
         </h2>
@@ -18,7 +19,11 @@ function Hook() {
 
       {/* Possible image */}
 
-      <div className="flex items-center justify-center flex-col">
+      <div className="w-[200px] h-[200px] relative mx-auto">
+        <Image src="/35.png" alt="getting ready" fill />
+      </div>
+
+      <div className="flex items-center justify-center flex-col mt-10">
         <h3 className="text-2xl font-bold capitalize mb-4">Ready to start your journey?</h3>
         <Link href="/sign-in" className="text-md font-bold bg-[red] p-2 rounded-lg shadow-lg">Join Now</Link>
       </div>
