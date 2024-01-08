@@ -24,7 +24,7 @@ function HeaderNav() {
           <Image src="/MysticMurkov1.png" alt="glitchy kitty" fill />
         </div>
 
-        <h1 className="text-1xl md:text-2xl font-bold">Mystic Kitten</h1>
+        <h1 className="text-1xl md:text-2xl font-bold drop-shadow-md">Mystic Kitten</h1>
 
       </div>
 

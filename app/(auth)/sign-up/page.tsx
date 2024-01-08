@@ -1,9 +1,8 @@
-import React from 'react'
+import RegisterForm from '@/components/auth/RegisterForm'
+
 
 function SignUpPage() {
-  return (
-    <div>SignUpPage</div>
-  )
+  return <RegisterForm />
 }
 
 export default SignUpPage
