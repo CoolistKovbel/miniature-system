@@ -5,6 +5,7 @@ import { RegisterSchema } from "@/schemas";
 import * as z from "zod";
 import { hash } from "bcryptjs";
 import { db } from "@/lib/db";
+import { findUserByEmail } from "@/data/user";
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
   const validatedFields = RegisterSchema.safeParse(values);
@@ -13,26 +14,23 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
     return { error: "invalud field" };
   }
 
+  const { email, password, username } = validatedFields.data;
 
-  const {email, password, username} = validatedFields.data
+  const hashPassword = await hash(password, 10);
 
-  const hashPassword = await hash(password, 10)
+  const existingUser = await findUserByEmail(email)
 
-
-  const existingUser = await db.user.findUnique({where: {email}})
-
-
-  if(existingUser) {
-    return {error: "Sorry this exists"}
+  if (existingUser) {
+    return { error: "Sorry this exists" };
   }
 
   await db.user.create({
     data: {
       email,
       password: hashPassword,
-      username
-    }
-  })
+      username,
+    },
+  });
 
   // Send email
 
