@@ -1,8 +1,27 @@
+import HeaderNav from "@/components/HeaderNav";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h2>Hello World</h2>
+    <main className="bg-[#111] text-white h-full">
+
+
+      {/* header */}
+      <HeaderNav />
+
+
+      {/* Hero */}
+
+
+      {/* features */}
+
+
+      {/* Hook */}
+
+
+      {/* Footer */}
+
+
+
     </main>
   )
 }
