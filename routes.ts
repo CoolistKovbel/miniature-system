@@ -29,3 +29,10 @@ export const apiAuthPrefix = "/api/auth";
  * @type {string}
  */
 export const DEFAULT_LOGIN_REDIRECT = "/settings";
+
+
+/**
+ * The Contract Address for the nft Minting collection
+ * @type {string}
+ */
+export const contractAddress = "0x1b9Ce8865115892C0BC1aAffCd7f18E137aCc45A"

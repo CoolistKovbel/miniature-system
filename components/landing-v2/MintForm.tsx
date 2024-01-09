@@ -44,7 +44,7 @@ export  function Mintform() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-[40%] mx-auto  my-[42px] relative  shadow-lg"
+        className="  my-[42px] relative  shadow-lg"
       >
         <FormField
           control={form.control}
