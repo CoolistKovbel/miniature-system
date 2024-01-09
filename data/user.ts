@@ -23,3 +23,5 @@ export const findUserById = async ( id: string) => {
     return null
   }
 }
+
+// Find user by address

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import FooterComp from "@/components/FooterComp";
+import { Toaster } from "@/components/ui/toaster"
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn("bg-[pink] min-h-fit" , inter.className)}>
         {children}
-        <FooterComp />
+        <Toaster />
       </body>
     </html>
   );
