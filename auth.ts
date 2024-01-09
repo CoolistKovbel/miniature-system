@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
+import { UserRole } from "@prisma/client"
 
 import { db } from "./lib/db"
 import authConfig from "./auth.config"
@@ -10,20 +11,10 @@ import { findUserById } from "./data/user"
 export const {
   handlers: { GET, POST },
   auth,
-  signIn,
+  signIn, //Can only be used in server actions or server components
   signOut
 } = NextAuth({
   callbacks: {
-    // async signIn({user}) {
-    //   const existingUser = await findUserById(user.id)
-
-    //   if(!existingUser || !existingUser.emailVerified) {
-    //     return false
-    //   }
-
-    //   return true
-
-    // },
     // data transfers to session
     async session({token, session}) {
       
@@ -33,15 +24,14 @@ export const {
       }
 
       if(token.role && session.user) {
-        session.user.role = token.role as "USER" | "ADMIN"
+        session.user.role = token.role as UserRole
       }
 
       return session
     },
     // Add data in token first
     async jwt({token, user}) {
-      console.log(user, "in the jwt")
-      // Fetch user
+
       if(!token.sub) return token
 
       // Get user from jwt...

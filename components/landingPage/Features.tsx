@@ -3,8 +3,8 @@ import React from "react";
 
 function Features() {
   return (
-    <section>
-      <div className="bg-[#101] p-4 flex items-center">
+    <section className="w-full md:w-[1200px] mx-auto">
+      <div className="bg-[#101] p-4 flex items-center shadow-lg rounded-lg">
         {/* Add image container */}
         <div className="w-60 h-60 relative">
           <Image src="/0103.png" alt="girl setting server up" fill />
@@ -21,7 +21,7 @@ function Features() {
         </div>
       </div>
 
-      <div className="flex items-center flex-row-reverse p-10">
+      <div className="flex items-center flex-row-reverse p-10 shadow-lg rounded-lg">
 
         <div className="w-60 h-60 relative">
           <Image src="/41.png" alt="girl sharing some words of wisdom.... maybe" fill />
@@ -39,7 +39,7 @@ function Features() {
         </div>
       </div>
 
-      <div className="bg-[#101] p-4 flex items-center">
+      <div className="bg-[#101] p-4 flex items-center shadow-lg rounded-lg">
 
         
       <div className="w-60 h-60 relative">
